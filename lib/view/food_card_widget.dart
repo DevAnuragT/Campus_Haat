@@ -31,18 +31,18 @@ class ProductCard extends StatelessWidget {
                   bottom: 4,
                   right: 4,
                   child: Container(
-                    padding: EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+                    padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
                     decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(8),
                     ),
                     child: Row(
                       children: [
-                        Icon(Icons.star, color: Colors.amber, size: 14),
-                        SizedBox(width: 4),
+                        const Icon(Icons.star, color: Colors.amber, size: 14),
+                        const SizedBox(width: 4),
                         Text(
                           product.rating.toString(),
-                          style: TextStyle(
+                          style: const TextStyle(
                             color: Colors.blue,
                             fontWeight: FontWeight.bold,
                             fontSize: 12,
@@ -55,7 +55,7 @@ class ProductCard extends StatelessWidget {
               ],
             ),
           ),
-          SizedBox(width: 10),
+          const SizedBox(width: 10),
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -67,15 +67,15 @@ class ProductCard extends StatelessWidget {
                     Flexible(
                       child: Text(
                         product.title,
-                        style: TextStyle(
+                        style: const TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 16,
                         ),
                         overflow: TextOverflow.ellipsis, // Prevents overflow
                       ),
                     ),
-                    SizedBox(width: 2),
-                    Icon(
+                    const SizedBox(width: 2),
+                    const Icon(
                       Icons.eco,
                       color: Colors.green,
                       size: 20, // Increase the size to make it more visible
@@ -92,16 +92,16 @@ class ProductCard extends StatelessWidget {
                 // Icons for delivery time and meal type
                 Row(
                   children: [
-                    Icon(Icons.access_time, size: 12, color: Colors.black),
-                    SizedBox(width: 4),
+                    const Icon(Icons.access_time, size: 12, color: Colors.black),
+                    const SizedBox(width: 4),
                     Text(
                       '${product.deliveryTime} mins',
-                      style: TextStyle(color: Colors.black, fontSize: 12),
+                      style: const TextStyle(color: Colors.black, fontSize: 12),
                     ),
-                    SizedBox(width: 16),
-                    Icon(Icons.restaurant_menu, size: 16, color: Colors.black),
-                    SizedBox(width: 4),
-                    Text(
+                    const SizedBox(width: 16),
+                    const Icon(Icons.restaurant_menu, size: 16, color: Colors.black),
+                    const SizedBox(width: 4),
+                    const Text(
                       'Lunch & Dinner',
                       style: TextStyle(color: Colors.black, fontSize: 12),
                     ),
@@ -112,7 +112,7 @@ class ProductCard extends StatelessWidget {
                   children: [
                     Text(
                       '₹ ${product.currentPrice}',
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 18,
                         color: Colors.blue,
@@ -122,7 +122,7 @@ class ProductCard extends StatelessWidget {
                     if(product.currentPrice!=product.originalPrice)
                       Text(
                         '₹ ${product.originalPrice}',
-                        style: TextStyle(
+                        style: const TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 14,
                           color: Colors.grey,
@@ -130,22 +130,22 @@ class ProductCard extends StatelessWidget {
                         ),
                       ),
                     Padding(
-                      padding: EdgeInsets.fromLTRB(5, 3, 8, 0),
+                      padding: const EdgeInsets.fromLTRB(5, 3, 8, 0),
                       child: ElevatedButton(
                         onPressed: () {
                           // Handle add to cart functionality
                         },
-                        child: Text(
-                          'Add',
-                          style: TextStyle(color: Colors.blue, fontSize: 15),
-                        ),
                         style: ElevatedButton.styleFrom(
-                          padding: EdgeInsets.symmetric(vertical: 0, horizontal: 10), // Adjusted vertical size
+                          padding: const EdgeInsets.symmetric(vertical: 0, horizontal: 10), // Adjusted vertical size
                           backgroundColor: Colors.white,
                           shape: RoundedRectangleBorder(
-                            side: BorderSide(color: Colors.blue),
+                            side: const BorderSide(color: Colors.blue),
                             borderRadius: BorderRadius.circular(5),
                           ),
+                        ),
+                        child: const Text(
+                          'Add',
+                          style: TextStyle(color: Colors.blue, fontSize: 15),
                         ),
                       ),
                     ),

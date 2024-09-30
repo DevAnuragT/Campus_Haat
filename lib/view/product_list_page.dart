@@ -37,11 +37,11 @@ class _ProductListScreenState extends State<ProductListScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Product List'),
+        title: const Text('Product List'),
       ),
       body: Obx(() {
         if (controller.isLoading.value && controller.productList.isEmpty) {
-          return Center(child: CircularProgressIndicator());
+          return const Center(child: CircularProgressIndicator());
         } else {
           return ListView.builder(
             controller: _scrollController, // Attach the scroll controller here
@@ -49,13 +49,13 @@ class _ProductListScreenState extends State<ProductListScreen> {
             itemBuilder: (context, index) {
               if (index >= controller.productList.length) {
                 // Return a loading indicator if more products are being fetched
-                return Center(child: CircularProgressIndicator());
+                return const Center(child: CircularProgressIndicator());
               }
 
               final product = controller.productList[index];
               return Card(
                 elevation: 2,
-                margin: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(12),
                 ),
@@ -67,8 +67,8 @@ class _ProductListScreenState extends State<ProductListScreen> {
                         top: 0,
                         right: 0,
                         child: Container(
-                          padding: EdgeInsets.symmetric(horizontal: 5, vertical: 1),
-                          decoration: BoxDecoration(
+                          padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 1),
+                          decoration: const BoxDecoration(
                             color: Colors.blue,
                             borderRadius: BorderRadius.only(
                               topRight: Radius.circular(12),
@@ -83,10 +83,10 @@ class _ProductListScreenState extends State<ProductListScreen> {
                             ],
                           ),
                           child: Padding(
-                            padding: EdgeInsets.all(3),
+                            padding: const EdgeInsets.all(3),
                             child: Text(
                               '${product.discount}% off',
-                              style: TextStyle(
+                              style: const TextStyle(
                                 color: Colors.white,
                                 fontSize: 12,
                                 fontWeight: FontWeight.bold,
